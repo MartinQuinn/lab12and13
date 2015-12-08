@@ -55,8 +55,8 @@ def queues_index():
 def queues_create():
 	"""
 	Create queue
-	curl -X POST -H 'Content-Type: application/json' http://localhost:5000/queues -d '{"name": "Lab12"}'
-	curl -X POST -H 'Content-Type: application/json' 52.18.184.96:8080/queues -d '{"name": "Lab12"}'	
+	curl -X POST -H 'Content-Type: application/json' http://localhost:5000/queues -d '{"name": "MartinLab12"}'
+	curl -X POST -H 'Content-Type: application/json' 52.18.184.96:8080/queues -d '{"name": "MartinLab12"}'	
 	
 	"""
 
@@ -71,8 +71,8 @@ def queues_create():
 def queues_remove(name):
 	"""
 	Delete queue
-	curl -X DELETE -H 'Accept: application/json' http://localhost:5000/queues/Lab12
-	curl -X DELETE -H 'Accept: application/json' 52.18.184.96:8080/queues/Lab12
+	curl -X DELETE -H 'Accept: application/json' http://localhost:5000/queues/MartinLab12
+	curl -X DELETE -H 'Accept: application/json' 52.18.184.96:8080/queues/MartinLab12
 	
 	"""
 
@@ -87,8 +87,8 @@ def queues_remove(name):
 def messages_count(name):
 	"""
 	Get message count for queue
-	curl -X GET -H 'Accept: application/json' http://localhost:5000/queues/Lab12/msgs/count
-	curl -X GET -H 'Accept: application/json' 52.18.184.96:8080/queues/Lab12/msgs/count
+	curl -X GET -H 'Accept: application/json' http://localhost:5000/queues/MartinLab12/msgs/count
+	curl -X GET -H 'Accept: application/json' 52.18.184.96:8080/queues/MartinLab12/msgs/count
 	"""
 
 	conn = get_conn()
@@ -102,8 +102,8 @@ def messages_count(name):
 def messages_write(name):
 	"""
 	Writee message to queue
-	curl -s -X POST -H 'Accept: application/json' http://localhost:5000/queues/Lab12/msgs -d '{"content": "this is the queue message"}' 
-	curl -s -X POST -H 'Accept: application/json' 52.18.184.96:8080/queues/Lab12/msgs -d '{"content": "this is the queue message"}'
+	curl -s -X POST -H 'Accept: application/json' http://localhost:5000/queues/MartinLab12/msgs -d '{"content": "this is the queue message"}' 
+	curl -s -X POST -H 'Accept: application/json' 52.18.184.96:8080/queues/MartinLab12/msgs -d '{"content": "this is the queue message"}'
 	"""
 
 	body = request.get_json(force=True)
@@ -124,8 +124,8 @@ def messages_write(name):
 def messages_read(name):
 	"""
 	Get message from queue
-	curl -X GET -H 'Accept: application/json' http://localhost:5000/queues/Lab12/msgs
-	curl -X GET -H 'Accept: application/json' 52.18.184.96:8080/queues/Lab12/msgs
+	curl -X GET -H 'Accept: application/json' http://localhost:5000/queues/MartinLab12/msgs
+	curl -X GET -H 'Accept: application/json' 52.18.184.96:8080/queues/MartinLab12/msgs
 	"""
 
 	conn = get_conn()
@@ -142,8 +142,8 @@ def messages_read(name):
 def messages_consume(name):
 	"""
 	Consume message from queue
-	curl -X DELETE -H 'Accept: application/json' http://localhost:5000/queues/Lab12/msgs
-	curl -X DELETE -H 'Accept: application/json' 52.18.184.96:8080/queues/Lab12/msgs
+	curl -X DELETE -H 'Accept: application/json' http://localhost:5000/queues/MartinLab12/msgs
+	curl -X DELETE -H 'Accept: application/json' 52.18.184.96:8080/queues/MartinLab12/msgs
 	"""
 
 	conn = get_conn()
